@@ -1,12 +1,12 @@
-# exchange_calendars
+# exchange_calendars | exchange_calendars 비공식 한글 번역
 
 [![PyPI](https://img.shields.io/pypi/v/exchange-calendars)](https://pypi.org/project/exchange-calendars/) ![Python Support](https://img.shields.io/pypi/pyversions/exchange_calendars) ![PyPI Downloads](https://img.shields.io/pypi/dd/exchange-calendars) [![Code style: black](https://img.shields.io/badge/code%20style-black-000000.svg)](https://github.com/psf/black)
 
-A Python library for defining and querying calendars for security exchanges.
+거래소의 일정을 정의하고 쿼리하는 Python 라이브러리입니다.
 
-Calendars for more than [50 exchanges](#Calendars) available out-the-box! If you still can't find the calendar you're looking for, [create a new one](#How-can-I-create-a-new-calendar)!
-
-### Notice: **[market_prices](https://github.com/maread99/market_prices) - the new library for prices data!**
+바로 이용할 수 있는 [50개의 거래소!](#Calendars) 만약 원하는 거래소를 찾을 수 없다면 다음 링크에서 직접 만들 수 있습나다, [새로 만들기](#How-can-I-create-a-new-calendar)!
+<!--
+### 공지: **[market_prices](https://github.com/maread99/market_prices) - 새로운 주가 데이터 라이브러리!**
 Much of the recent development of `exchange_calendars` has been driven by the new [`market_prices`](https://github.com/maread99/market_prices) library. Check it out if you like the idea of using `exchange_calendars` to create meaningful OHLCV datasets. Works out-the-box with freely available data!
 
 ## Notice: **v4 released** (June 2022)
@@ -35,34 +35,35 @@ Version 4.0.1 completes the transition to a more consistent interface across the
 See the [4.0 release todo](https://github.com/gerrymanoim/exchange_calendars/issues/61) for a full list of changes and corresponding PRs.
 
 Please offer any feedback at the [v4 discussion](https://github.com/gerrymanoim/exchange_calendars/discussions/202).
-
-## Installation
+-->
+## 설치
 
 ```bash
 $ pip install exchange_calendars
 ```
 
-## Quick Start
+## 빠른 시작
 
 ```python
 import exchange_calendars as xcals
 ```
 
-Get a list of available calendars:
+사용 가능한 거래소 달력 리스트 가져오기:
 
 ```python
 >>> xcals.get_calendar_names(include_aliases=False)[5:10]
 ['CMES', 'IEPA', 'XAMS', 'XASX', 'XBKK']
 ```
 
-Get a calendar:
+달력 가져오기:
 
 ```python
->>> xnys = xcals.get_calendar("XNYS")  # New York Stock Exchange
->>> xhkg = xcals.get_calendar("XHKG")  # Hong Kong Stock Exchange
+>>> xnys = xcals.get_calendar("XNYS")  # 뉴욕 주식 거래소
+>>> xhkg = xcals.get_calendar("XHKG")  # 홍콩 주식 거래소
 ```
-Query the schedule:
+일정 쿼리 요청:
 
+open : 장 개시, break_start : 점심시간 시작, break_end : 점심시간 종료, close : 장 종료
 ```python
 >>> xhkg.schedule.loc["2021-12-29":"2022-01-04"]
 ```
@@ -137,7 +138,7 @@ Timestamp('2022-01-03 07:59:00+0000', tz='UTC')
 ```
 Check out the [minutes tutorial](docs/tutorials/minutes.ipynb) for a deeper dive that includes an explanation of the concept of 'minutes' and how the "side" option determines which minutes are treated as trading minutes.
 
-## Tutorials
+## 튜토리얼
 * [sessions.ipynb](docs/tutorials/sessions.ipynb) - all things [sessions](#Working-with-sessions).
 * [minutes.ipynb](docs/tutorials/minutes.ipynb) - all things [minutes](#Working-with-minutes). Don't miss this one!
 * [calendar_properties.ipynb](docs/tutorials/calendar_properties.ipynb) - calendar constrution and a walk through the schedule and all other calendar properties.
@@ -227,13 +228,13 @@ You'll find the workflow to modify an existing calendar [here](.github/pull_requ
 
 See the [minutes tutorial](docs/tutorials/minutes.ipynb) for a detailed explanation of which minutes an exchange is considered open over. If you previously used `trading_calendars`, or `exchange_calendars` prior to release 3.4, then this is the place to look for answers to questions of how the definition of trading minutes has changed over time (and is now stable and flexible!).
 
-## Calendars
+## 달력
 
-| Exchange                        | ISO Code | Country        | Version Added | Exchange Website (English)                                   |
+| 거래소                          | ISO Code | 국가           | 추가된 버전   | 거래소 사이트 (English)                                      |
 |---------------------------------|----------| -------------- |---------------| ------------------------------------------------------------ |
-| New York Stock Exchange         | XNYS     | USA            | 1.0           | https://www.nyse.com/index                                   |
-| CBOE Futures                    | XCBF     | USA            | 1.0           | https://markets.cboe.com/us/futures/overview/                |
-| Chicago Mercantile Exchange     | CMES     | USA            | 1.0           | https://www.cmegroup.com/                                    |
+| 뉴욕 증권거래소                  | XNYS     | USA            | 1.0           | https://www.nyse.com/index                                   |
+| CBOE, 시카고 옵션거래소          | XCBF     | USA            | 1.0           | https://markets.cboe.com/us/futures/overview/                |
+| CME, 시카고 상업거래소            | CMES     | USA            | 1.0           | https://www.cmegroup.com/                                    |
 | ICE US                          | IEPA     | USA            | 1.0           | https://www.theice.com/index                                 |
 | Toronto Stock Exchange          | XTSE     | Canada         | 1.0           | https://www.tsx.com/                                         |
 | BMF Bovespa                     | BVMF     | Brazil         | 1.0           | http://www.b3.com.br/en_us/                                  |

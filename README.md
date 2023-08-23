@@ -232,9 +232,9 @@ See the [minutes tutorial](docs/tutorials/minutes.ipynb) for a detailed explanat
 
 | 거래소                          | ISO Code | 국가           | 추가된 버전   | 거래소 사이트 (English)                                      |
 |---------------------------------|----------| -------------- |---------------| ------------------------------------------------------------ |
-| 뉴욕 증권거래소                  | XNYS     | USA            | 1.0           | https://www.nyse.com/index                                   |
+| NYSE, 뉴욕 증권거래소            | XNYS     | USA            | 1.0           | https://www.nyse.com/index                                   |
 | CBOE, 시카고 옵션거래소          | XCBF     | USA            | 1.0           | https://markets.cboe.com/us/futures/overview/                |
-| CME, 시카고 상업거래소            | CMES     | USA            | 1.0           | https://www.cmegroup.com/                                    |
+| CME, 시카고 상업거래소           | CMES     | USA            | 1.0           | https://www.cmegroup.com/                                    |
 | ICE US                          | IEPA     | USA            | 1.0           | https://www.theice.com/index                                 |
 | Toronto Stock Exchange          | XTSE     | Canada         | 1.0           | https://www.tsx.com/                                         |
 | BMF Bovespa                     | BVMF     | Brazil         | 1.0           | http://www.b3.com.br/en_us/                                  |
@@ -260,7 +260,7 @@ See the [minutes tutorial](docs/tutorials/minutes.ipynb) for a detailed explanat
 | Bombay Stock Exchange           | XBOM     | India          | 1.5           | https://www.bseindia.com                                     |
 | Singapore Exchange              | XSES     | Singapore      | 1.5           | https://www.sgx.com                                          |
 | Shanghai Stock Exchange         | XSHG     | China          | 1.5           | http://english.sse.com.cn                                    |
-| Korea Exchange                  | XKRX     | South Korea    | 1.6           | http://global.krx.co.kr                                      |
+| Korea Exchange, 한국 거래소      | XKRX     | South Korea    | 1.6           | http://global.krx.co.kr                                      |
 | Iceland Stock Exchange          | XICE     | Iceland        | 1.7           | http://www.nasdaqomxnordic.com/                              |
 | Poland Stock Exchange           | XWAR     | Poland         | 1.9           | http://www.gpw.pl                                            |
 | Santiago Stock Exchange         | XSGO     | Chile          | 1.9           | https://www.bolsadesantiago.com/                             |
@@ -288,16 +288,16 @@ See the [minutes tutorial](docs/tutorials/minutes.ipynb) for a detailed explanat
 
 > Note that exchange calendars are defined by their [ISO-10383](https://www.iso20022.org/10383/iso-10383-market-identifier-codes) market identifier code.
 
-## Deprecations and Renaming
+## 지원 중단 예정(Deprecations)과 리네이밍
 
-### Methods deprecated in 4.0
+### 4.0버전에서 지원 중단 예정인 메소드
 | Deprecated method | Reason |
 | ----------------- | ------ |
 | sessions_closes | use `.closes[start:end]` |
 | sessions_opens | use `.opens[start:end]` |
 
-### Methods with a parameter renamed in 4.0
-| Method
+### 4.0버전에서 파라메터명이 변경된 메소드
+| 메소드
 | ------
 | is_session |
 | is_open_on_minute |
@@ -316,8 +316,8 @@ See the [minutes tutorial](docs/tutorials/minutes.ipynb) for a detailed explanat
 | sessions_in_range |
 | sessions_window |
 
-### Methods renamed in version 3.4 and removed in 4.0
-| Previous name | New name |
+### 3.4에서 이름이 변경된 메소드, 그리고 4.0에서 제거된 메소드
+| 이전 이름 | 새 이름 |
 | ------------- | -------- |
 | all_minutes | minutes |
 | all_minutes_nanos | minutes_nanos |
@@ -345,8 +345,8 @@ See the [minutes tutorial](docs/tutorials/minutes.ipynb) for a detailed explanat
 | session_distance | sessions_distance |
 | session_opens_in_range | sessions_opens |
 
-### Other methods deprecated in 3.4 and removed in 4.0
-| Removed Method
+### 3.4에서 지원 중단 예정인 메소드, 그리고 4.0에 제거된 메소드
+| 메소드
 | -----------------
 | execution_minute_for_session
 | execution_minute_for_sessions_in_range
